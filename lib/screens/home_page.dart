@@ -29,6 +29,66 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 17, vertical: 30),
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 8),
+        height: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.orange.shade300,
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              width: 275,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Flutter Notes App',
+                      style: TextStyle(
+                        fontSize: 28,
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'Test description text in note custom widget',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black54,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.delete,
+                  size: 37,
+                  color: Colors.black,
+                ),
+                Text(
+                  'July 25,2021',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.black54,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
