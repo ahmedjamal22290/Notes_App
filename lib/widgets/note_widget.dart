@@ -11,7 +11,7 @@ class NoteWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 17, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
       height: 200,
       decoration: BoxDecoration(
