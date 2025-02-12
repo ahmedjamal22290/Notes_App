@@ -53,12 +53,15 @@ class AddNoteBottomSheet extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               color: Colors.purple,
             ),
-            child: Center(
-              child: Text(
-                'Add',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 22,
+            child: GestureDetector(
+              onTap: () {},
+              child: const Center(
+                child: Text(
+                  'Add',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
                 ),
               ),
             ),
