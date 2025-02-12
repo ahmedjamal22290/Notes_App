@@ -12,8 +12,8 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 8),
-      height: 200,
+      padding: const EdgeInsets.only(top: 24, bottom: 24, left: 16),
+      // height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.orange.shade300,
@@ -32,29 +32,35 @@ class NoteItem extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text(
-              descrip,
-              style: const TextStyle(
-                fontSize: 15,
-                color: Colors.black54,
-                fontWeight: FontWeight.bold,
+            subtitle: Padding(
+              padding: const EdgeInsets.only(top: 16.0),
+              child: Text(
+                descrip,
+                style: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             trailing: IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.delete,
                 size: 37,
               ),
               color: Colors.black,
             ),
           ),
-          Text(
-            date,
-            style: const TextStyle(
-              fontSize: 13,
-              color: Colors.black54,
-              fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.only(right: 23.0),
+            child: Text(
+              date,
+              style: const TextStyle(
+                fontSize: 13,
+                color: Colors.black54,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],

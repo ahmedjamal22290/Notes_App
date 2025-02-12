@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_search_widget.dart';
-import 'package:notes_app/widgets/note_widget.dart';
+import 'package:notes_app/widgets/note_item.dart';
 
 class homeViewBody extends StatelessWidget {
   const homeViewBody({
