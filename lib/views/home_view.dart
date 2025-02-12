@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/add_note_bottomSheet.dart';
 import 'package:notes_app/widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -19,14 +20,5 @@ class HomeView extends StatelessWidget {
       ),
       body: const homeViewBody(),
     );
-  }
-}
-
-class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
