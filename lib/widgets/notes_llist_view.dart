@@ -17,19 +17,23 @@ class NotesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          if (colorIndex == 5) {
-            colorIndex = 0;
-          }
-          return NoteItem(
-            color: colors[colorIndex++],
-            date: "July 25,2021",
-            descrip: 'Test description text in note custom widget',
-            title: "Flutter Notes App",
-          );
-        },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        child: ListView.builder(
+          padding: EdgeInsets.zero,
+          itemCount: 20,
+          itemBuilder: (context, index) {
+            if (colorIndex == 5) {
+              colorIndex = 0;
+            }
+            return NoteItem(
+              color: colors[colorIndex++],
+              date: "July 25,2021",
+              descrip: 'Test description text in note custom widget',
+              title: "Flutter Notes App",
+            );
+          },
+        ),
       ),
     );
   }
