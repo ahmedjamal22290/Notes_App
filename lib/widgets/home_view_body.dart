@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/custom_search_widget.dart';
+import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/note_item.dart';
 
 class homeViewBody extends StatelessWidget {
@@ -9,37 +9,28 @@ class homeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: [
-      const Padding(
-        padding: EdgeInsets.symmetric(vertical: 18.0, horizontal: 17),
-        child: Row(
-          children: [
-            Text(
-              'Notes',
-              style: TextStyle(
-                fontSize: 32,
-              ),
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0),
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 17),
+            child: customAppBar(),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return NoteItem(
+                  date: "July 25,2021",
+                  descrip: 'Test description text in note custom widget',
+                  title: "Flutter Notes App",
+                );
+              },
             ),
-            Spacer(),
-            customSearchWidget(),
-          ],
-        ),
+          )
+        ],
       ),
-      NoteItem(
-        date: "July 25,2021",
-        descrip: 'Test description text in note custom widget',
-        title: "Flutter Notes App",
-      ),
-      NoteItem(
-        date: "July 25,2021",
-        descrip: 'Test description text in note custom widget',
-        title: "Flutter Notes App",
-      ),
-      NoteItem(
-        date: "July 25,2021",
-        descrip: 'Test description text in note custom widget',
-        title: "Flutter Notes App",
-      ),
-    ]);
+    );
   }
 }
