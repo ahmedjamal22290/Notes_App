@@ -26,7 +26,8 @@ class NoteItem extends StatelessWidget {
             title: Text(
               title,
               style: const TextStyle(
-                fontSize: 28,
+                // fontFamily: 'Poppins',
+                fontSize: 26,
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
               ),
