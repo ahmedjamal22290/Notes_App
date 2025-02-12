@@ -25,17 +25,17 @@ class homeViewBody extends StatelessWidget {
           ],
         ),
       ),
-      NoteWidget(
+      NoteItem(
         date: "July 25,2021",
         descrip: 'Test description text in note custom widget',
         title: "Flutter Notes App",
       ),
-      NoteWidget(
+      NoteItem(
         date: "July 25,2021",
         descrip: 'Test description text in note custom widget',
         title: "Flutter Notes App",
       ),
-      NoteWidget(
+      NoteItem(
         date: "July 25,2021",
         descrip: 'Test description text in note custom widget',
         title: "Flutter Notes App",

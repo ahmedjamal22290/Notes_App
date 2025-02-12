@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class NoteWidget extends StatelessWidget {
-  const NoteWidget({
+class NoteItem extends StatelessWidget {
+  const NoteItem({
     super.key,
     required this.date,
     required this.descrip,
@@ -18,54 +18,43 @@ class NoteWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         color: Colors.orange.shade300,
       ),
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            width: 275,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 30.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    descrip,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.black54,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+          ListTile(
+            title: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 28,
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Icon(
+            subtitle: Text(
+              descrip,
+              style: const TextStyle(
+                fontSize: 15,
+                color: Colors.black54,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: Icon(
                 Icons.delete,
                 size: 37,
-                color: Colors.black,
               ),
-              Text(
-                date,
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: Colors.black54,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
-            ],
+              color: Colors.black,
+            ),
+          ),
+          Text(
+            date,
+            style: const TextStyle(
+              fontSize: 13,
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+            ),
           )
         ],
       ),
