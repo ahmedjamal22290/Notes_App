@@ -6,8 +6,10 @@ class NoteItem extends StatelessWidget {
     required this.date,
     required this.descrip,
     required this.title,
+    required this.color,
   });
   final String title, descrip, date;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +18,7 @@ class NoteItem extends StatelessWidget {
       // height: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Colors.orange.shade300,
+        color: color,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
