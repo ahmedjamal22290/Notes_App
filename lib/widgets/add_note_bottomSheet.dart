@@ -26,31 +26,26 @@ class AddNoteBottomSheet extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          SizedBox(
-            height: 150,
-            child: TextField(
-              maxLines: null,
-              minLines: null,
-              expands: true,
-              decoration: InputDecoration(
-                labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
-                labelText: "Content",
-                border: const OutlineInputBorder(
-                  borderSide: BorderSide(),
+          TextField(
+            maxLines: 5,
+            decoration: InputDecoration(
+              labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
+              labelText: "Content",
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Colors.pink,
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                    color: Colors.pink,
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Container(
             height: 45,
-            width: double.infinity,
+            width: MediaQuery.of(context).size.width, //all width of screen
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.deepPurpleAccent,
