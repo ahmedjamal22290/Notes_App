@@ -12,6 +12,7 @@ class AddNoteBottomSheet extends StatelessWidget {
         children: [
           TextField(
             decoration: InputDecoration(
+              labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
               labelText: "Title",
               border: const OutlineInputBorder(
                 borderSide: BorderSide(),
@@ -32,6 +33,7 @@ class AddNoteBottomSheet extends StatelessWidget {
               minLines: null,
               expands: true,
               decoration: InputDecoration(
+                labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
                 labelText: "Content",
                 border: const OutlineInputBorder(
                   borderSide: BorderSide(),
@@ -51,7 +53,7 @@ class AddNoteBottomSheet extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.purple,
+              color: Colors.deepPurpleAccent,
             ),
             child: GestureDetector(
               onTap: () {},
