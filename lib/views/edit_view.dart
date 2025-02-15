@@ -9,7 +9,7 @@ class EditView extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 18.0),
+          padding: const EdgeInsets.only(top: 20.0),
           child: Column(
             children: [
               CustomAppBar(
@@ -20,14 +20,52 @@ class EditView extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         size: 28,
                         color: Colors.white,
                         Icons.check,
                       ),
                     ),
                   ),
-                  title: 'Edit Note')
+                  title: 'Edit Note'),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
+                    labelText: "Title",
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.pink,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: TextField(
+                  maxLines: 5,
+                  decoration: InputDecoration(
+                    labelStyle: const TextStyle(color: Colors.deepPurpleAccent),
+                    labelText: "Content",
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.pink,
+                      ),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
