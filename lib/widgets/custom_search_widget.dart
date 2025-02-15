@@ -49,7 +49,7 @@ class _CustomIconState extends State<CustomIcon>
             color: (_colorAnimation.value ?? Colors.white).withOpacity(0.1),
           ),
           child: IconButton(
-            onPressed: _animateButton,
+            onPressed: () => _animateButton(context),
             icon: Icon(
               widget.icon,
               size: 30,
@@ -61,13 +61,16 @@ class _CustomIconState extends State<CustomIcon>
     );
   }
 
-  void _animateButton() async {
+  void _animateButton(BuildContext context) async {
     if (_isAnimating) return; // Prevent multiple presses
     _isAnimating = true;
 
     await _controller.forward();
     await Future.delayed(const Duration(milliseconds: 1000));
-    await _controller.reverse();
+    if (widget.icon == Icons.check) {
+      Navigator.pop(context);
+    }
+    _controller.reverse();
 
     _isAnimating = false;
     log('Tapped');
