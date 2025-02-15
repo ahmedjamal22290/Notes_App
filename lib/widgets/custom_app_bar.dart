@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          customIcon,
+          CustomIcon(icon: customIcon),
           // customSearchWidget(),
         ],
       ),

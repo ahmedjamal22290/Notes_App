@@ -15,7 +15,10 @@ class homeViewBody extends StatelessWidget {
       child: Column(
         children: [
           const CustomAppBar(
-            customIcon: customSearchWidget(),
+            customIcon: Icon(
+              Icons.search,
+              size: 30,
+            ),
             title: "Notes",
           ),
           NotesListView(),
