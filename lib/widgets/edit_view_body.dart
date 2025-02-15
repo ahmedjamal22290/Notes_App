@@ -13,7 +13,7 @@ class EditViewBody extends StatelessWidget {
         padding: const EdgeInsets.only(top: 30.0),
         child: Column(
           children: [
-            CustomAppBar(iconData: Icons.check, title: 'Edit Note'),
+            const CustomAppBar(iconData: Icons.check, title: 'Edit Note'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: TextField(
