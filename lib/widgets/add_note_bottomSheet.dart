@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_add_button.dart';
 import 'package:notes_app/widgets/custom_field.dart';
 
 class AddNoteBottomSheet extends StatelessWidget {
@@ -50,26 +51,15 @@ class _AddNoteFIeldsState extends State<AddNoteFIelds> {
             maxLines: 5,
           ),
           //
-          SizedBox(height: MediaQuery.of(context).size.height / 6),
-          Container(
-            height: 45,
-            width: MediaQuery.of(context).size.width, //all width of screen
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.deepPurpleAccent,
-            ),
-            child: GestureDetector(
-              onTap: () {},
-              child: const Center(
-                child: Text(
-                  'Add',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
-                  ),
-                ),
-              ),
-            ),
+          SizedBox(height: MediaQuery.of(context).size.height / 7),
+          CustomAddButton(
+            onTap: () {
+              if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+              }
+            },
           )
         ],
       ),
