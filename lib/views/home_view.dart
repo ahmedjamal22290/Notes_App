@@ -10,7 +10,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       floatingActionButton: CustomFloatingButton(),
-      body: homeViewBody(),
+      body: HomeViewBody(),
     );
   }
 }

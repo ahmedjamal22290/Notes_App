@@ -13,7 +13,6 @@ class NotesListView extends StatelessWidget {
     Colors.yellow.shade300,
     Colors.green.shade300,
   ];
-  int colorIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -21,13 +20,10 @@ class NotesListView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: ListView.builder(
           padding: EdgeInsets.zero,
-          itemCount: 20,
+          itemCount: 5,
           itemBuilder: (context, index) {
-            if (colorIndex == 5) {
-              colorIndex = 0;
-            }
             return NoteItem(
-              color: colors[colorIndex++],
+              color: colors[index],
               date: "July 25,2021",
               descrip: 'Test description text in note custom widget',
               title: "Flutter Notes App",

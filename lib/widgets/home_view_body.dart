@@ -3,8 +3,8 @@ import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_search_widget.dart';
 import 'package:notes_app/widgets/notes_llist_view.dart';
 
-class homeViewBody extends StatelessWidget {
-  const homeViewBody({
+class HomeViewBody extends StatelessWidget {
+  const HomeViewBody({
     super.key,
   });
 
