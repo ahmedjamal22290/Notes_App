@@ -24,11 +24,14 @@ class AddNoteBottomSheet extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return const Padding(
-            padding:
-                EdgeInsets.only(top: 40.0, right: 20, left: 20, bottom: 40),
-            child: SingleChildScrollView(
-              child: AddNoteFIelds(),
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
+            child: const Padding(
+              padding:
+                  EdgeInsets.only(top: 40.0, right: 20, left: 20, bottom: 40),
+              child: SingleChildScrollView(
+                child: AddNoteFIelds(),
+              ),
             ),
           );
         },
