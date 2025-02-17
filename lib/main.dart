@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_view.dart';
 import 'package:notes_app/views/home_view.dart';
 
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kNotesBox);
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(const NotesApp());
 }
 
@@ -22,8 +24,8 @@ class NotesApp extends StatelessWidget {
         fontFamily: "Poppins",
       ),
       routes: {
-        HomeView.id: (context) => HomeView(),
-        EditView.id: (context) => EditView(),
+        HomeView.id: (context) => const HomeView(),
+        EditView.id: (context) => const EditView(),
       },
       initialRoute: HomeView.id,
     );

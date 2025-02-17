@@ -9,18 +9,18 @@ class EditViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(top: 30.0),
+        padding: EdgeInsets.only(top: 30.0),
         child: Column(
           children: [
-            const CustomAppBar(iconData: Icons.check, title: 'Edit Note'),
-            const Padding(
+            CustomAppBar(iconData: Icons.check, title: 'Edit Note'),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomField(title: "Title"),
             ),
-            const SizedBox(height: 20),
-            const Padding(
+            SizedBox(height: 20),
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: CustomField(
                 title: "Content",
