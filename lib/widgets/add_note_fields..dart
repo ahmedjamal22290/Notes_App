@@ -44,14 +44,14 @@ class _AddNoteFIeldsState extends State<AddNoteFIelds> {
           CustomAddButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
+                formKey.currentState!.save();
                 BlocProvider.of<AddNoteCubit>(context).addNote(
                   NoteModel(
                       title: title!,
                       subtitle: content!,
                       date: 'July 25,2021',
-                      color: 1),
+                      color: Colors.pink.value),
                 );
-                formKey.currentState!.save();
               } else {
                 autovalidateMode = AutovalidateMode.always;
               }
