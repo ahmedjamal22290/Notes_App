@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_view.dart';
 
 class NoteItem extends StatelessWidget {
@@ -10,6 +11,7 @@ class NoteItem extends StatelessWidget {
     required this.color,
   });
   final String title, descrip, date;
+  // final NoteModel note;
   final Color color;
   @override
   Widget build(BuildContext context) {
