@@ -4,7 +4,6 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_states.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/widgets/color_picker_widget.dart';
 import 'package:notes_app/widgets/custom_add_button.dart';
 import 'package:notes_app/widgets/custom_field.dart';
 
@@ -88,7 +87,9 @@ class _AddNoteFIeldsState extends State<AddNoteFIelds> {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: colors.map((c) => colorPickerItem(c)).toList(),
+      children: colors.map((c) {
+        return colorPickerItem(c);
+      }).toList(),
     );
   }
 
