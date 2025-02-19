@@ -3,9 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatefulWidget {
-  const CustomIcon({super.key, required this.icon});
+  const CustomIcon({super.key, required this.icon, this.onPressed});
   final IconData? icon;
-
+  final void Function()? onPressed;
   @override
   State<CustomIcon> createState() => _CustomIconState();
 }
@@ -68,6 +68,7 @@ class _CustomIconState extends State<CustomIcon>
     await _controller.forward();
     await Future.delayed(const Duration(milliseconds: 1000));
     if (widget.icon == Icons.check) {
+      widget.onPressed!.call();
       Navigator.pop(context);
     }
     _controller.reverse();
