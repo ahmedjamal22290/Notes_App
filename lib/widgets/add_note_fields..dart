@@ -76,132 +76,42 @@ class _AddNoteFIeldsState extends State<AddNoteFIelds> {
   }
 
   Row pickColorMethod() {
+    List<Color> colors = [
+      Colors.green,
+      Colors.yellow,
+      Colors.orange,
+      Colors.red,
+      Colors.purpleAccent,
+      Colors.pink,
+      Colors.white,
+    ];
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        GestureDetector(
-          onTap: () {
-            color = Colors.green.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.green.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
+      children: colors.map((c) => colorPickerItem(c)).toList(),
+    );
+  }
+
+  Widget colorPickerItem(Color selectedColor) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          color = selectedColor.value;
+        });
+      },
+      child: Container(
+        height: 30,
+        width: 30,
+        decoration: BoxDecoration(
+          color: selectedColor,
+          borderRadius: BorderRadius.circular(60),
         ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.yellow.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.yellow,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.yellow.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.orange.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.orange,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.orange.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.red.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.red.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.purpleAccent.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.purpleAccent,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.purpleAccent.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.pink.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.pink,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.pink.value
-                ? const Icon(Icons.check)
-                : const SizedBox(),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            color = Colors.white.value;
-            setState(() {});
-          },
-          child: Container(
-            height: 30,
-            width: 30,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            child: color == Colors.white.value
-                ? const Icon(
-                    Icons.check,
-                    color: Colors.grey,
-                  )
-                : const SizedBox(),
-          ),
-        ),
-      ],
+        child: color == selectedColor.value
+            ? Icon(Icons.check,
+                color:
+                    selectedColor == Colors.white ? Colors.grey : Colors.black)
+            : const SizedBox(),
+      ),
     );
   }
 }
