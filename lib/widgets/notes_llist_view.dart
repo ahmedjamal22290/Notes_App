@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
@@ -35,12 +33,6 @@ class NotesListView extends StatelessWidget {
                 return NoteItem(
                   note: notes[index],
                 );
-                // return NoteItem(
-                //   color: colors[index],
-                //   date: "July 25,2021",
-                //   descrip: 'Test description text in note custom widget',
-                //   title: "Flutter Notes App",
-                // );
               },
             ),
           ),
