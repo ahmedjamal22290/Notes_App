@@ -23,11 +23,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 30.0),
+    return const Padding(
+      padding: EdgeInsets.only(top: 30.0),
       child: Column(
         children: [
-          const CustomAppBar(
+          CustomAppBar(
             iconData: Icons.search,
             title: "Notes",
           ),
