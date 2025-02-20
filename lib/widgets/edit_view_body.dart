@@ -60,8 +60,50 @@ class _EditViewBodyState extends State<EditViewBody> {
                 maxLines: 5,
               ),
             ),
+            const SizedBox(height: 20),
+            pickColorMethod(),
           ],
         ),
+      ),
+    );
+  }
+
+  Row pickColorMethod() {
+    List<Color> color = [
+      Colors.green,
+      Colors.yellow,
+      Colors.orange,
+      Colors.red,
+      Colors.purpleAccent,
+      Colors.pink,
+      Colors.white,
+    ];
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: color.map((c) {
+        return colorItem(c);
+      }).toList(),
+    );
+  }
+
+  Widget colorItem(Color selectedColor) {
+    return GestureDetector(
+      onTap: () {
+        widget.note.color = selectedColor.value;
+        setState(() {});
+      },
+      child: Container(
+        height: 50,
+        width: 50,
+        decoration: BoxDecoration(
+          color: selectedColor,
+          borderRadius: BorderRadius.circular(60),
+        ),
+        child: widget.note.color == selectedColor.value
+            ? Icon(Icons.check,
+                color:
+                    selectedColor == Colors.white ? Colors.grey : Colors.black)
+            : const SizedBox(),
       ),
     );
   }
