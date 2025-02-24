@@ -46,8 +46,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             },
           ),
           const SizedBox(height: 15),
-          SizedBox(
-            height: MediaQuery.of(context).size.height - 250,
+          Expanded(
             child: findNotes(_controller.text) == null
                 ? const Text(
                     'There are no notes now.',
