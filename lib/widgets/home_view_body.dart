@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notes_app/views/search_view.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/notes_llist_view.dart';
 
@@ -23,15 +24,18 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 30.0),
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0),
       child: Column(
         children: [
           CustomAppBar(
+            onPressed: () {
+              Navigator.pushNamed(context, SearchView.id);
+            },
             iconData: Icons.search,
             title: "Notes",
           ),
-          NotesListView(),
+          const NotesListView(),
         ],
       ),
     );

@@ -6,6 +6,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/home_view.dart';
+import 'package:notes_app/views/search_view.dart';
 
 void main() async {
   Bloc.observer = SimpleBlocObserver();
@@ -34,6 +35,7 @@ class NotesApp extends StatelessWidget {
         ),
         routes: {
           HomeView.id: (context) => const HomeView(),
+          SearchView.id: (context) => const SearchView(),
         },
         initialRoute: HomeView.id,
       ),

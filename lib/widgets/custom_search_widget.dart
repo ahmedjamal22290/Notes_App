@@ -70,6 +70,8 @@ class _CustomIconState extends State<CustomIcon>
     if (widget.icon == Icons.check) {
       widget.onPressed!.call();
       Navigator.pop(context);
+    } else {
+      widget.onPressed!.call();
     }
     _controller.reverse();
 
