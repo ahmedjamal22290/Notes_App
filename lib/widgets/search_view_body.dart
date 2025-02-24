@@ -19,7 +19,7 @@ class SearchViewBody extends StatefulWidget {
 class _SearchViewBodyState extends State<SearchViewBody> {
   late List<NoteModel>? notes;
 
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -55,9 +55,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           const SizedBox(height: 15),
           Expanded(
             child: findNotes(_controller.text) == null
-                ? const Text(
-                    'There are no notes now.',
-                    style: TextStyle(fontSize: 20),
+                ? const Center(
+                    child: Text(
+                      'There are no notes now.',
+                      style: TextStyle(fontSize: 20),
+                    ),
                   )
                 : ListView(
                     children: findNotes(_controller.text)!,
