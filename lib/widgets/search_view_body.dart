@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
@@ -16,7 +18,8 @@ class SearchViewBody extends StatefulWidget {
 
 class _SearchViewBodyState extends State<SearchViewBody> {
   late List<NoteModel>? notes;
-  String? searchValue;
+
+  TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -35,8 +38,10 @@ class _SearchViewBodyState extends State<SearchViewBody> {
       child: Column(
         children: [
           CustomSearchBar(
+            controller: _controller,
             onChanged: (value) {
-              searchValue = value;
+              _controller.text = value;
+              log(_controller.text);
               setState(() {});
             },
           ),
@@ -56,5 +61,15 @@ class _SearchViewBodyState extends State<SearchViewBody> {
         ],
       ),
     );
+  }
+
+  List<Widget>? findNotes(String text) {
+    List<Widget> results = [];
+    for (int i = 0; notes == null ? i < 0 : i < notes!.length; i++) {
+      if (notes![i].title.contains(text) || notes![i].subtitle.contains(text)) {
+        results.add(NoteItem(note: notes![i]));
+      }
+    }
+    return results.isEmpty ? null : results;
   }
 }
