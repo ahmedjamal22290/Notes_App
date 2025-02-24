@@ -24,6 +24,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   void initState() {
     notes = BlocProvider.of<NotesCubit>(context).notes ?? [];
+    BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     super.initState();
   }
 
@@ -36,7 +37,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
         right: 4,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Text(
+            'Search',
+            style: TextStyle(fontSize: 32),
+          ),
+          const SizedBox(height: 9),
           CustomSearchBar(
             controller: _controller,
             onChanged: (value) {
@@ -69,5 +76,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
       }
     }
     return results.isEmpty ? null : results.reversed.toList();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
