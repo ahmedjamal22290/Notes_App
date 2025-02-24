@@ -77,19 +77,9 @@ class _AddNoteFIeldsState extends State<AddNoteFIelds> {
   }
 
   Row pickColorMethod() {
-    List<Color> colors = [
-      Colors.green,
-      Colors.yellow,
-      Colors.orange,
-      Colors.red,
-      Colors.purpleAccent,
-      Colors.pink,
-      Colors.white,
-    ];
-
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: colors.map((c) {
+      children: kColors.map((c) {
         return colorPickerItem(c);
       }).toList(),
     );

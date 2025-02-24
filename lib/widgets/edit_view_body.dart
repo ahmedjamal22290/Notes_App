@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
@@ -43,6 +44,7 @@ class _EditViewBodyState extends State<EditViewBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomField(
+                hint: widget.note.title,
                 title: "Title",
                 onChanged: (value) {
                   title = value;
@@ -53,6 +55,7 @@ class _EditViewBodyState extends State<EditViewBody> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: CustomField(
+                hint: widget.note.subtitle,
                 onChanged: (value) {
                   content = value;
                 },
@@ -69,18 +72,9 @@ class _EditViewBodyState extends State<EditViewBody> {
   }
 
   Row pickColorMethod() {
-    List<Color> color = [
-      Colors.green,
-      Colors.yellow,
-      Colors.orange,
-      Colors.red,
-      Colors.purpleAccent,
-      Colors.pink,
-      Colors.white,
-    ];
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: color.map((c) {
+      children: kColors.map((c) {
         return colorItem(c);
       }).toList(),
     );
