@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  // final TextEditingController controller;
+  final TextEditingController controller;
 
-  const CustomSearchBar({super.key, required this.onChanged});
+  const CustomSearchBar(
+      {super.key, required this.onChanged, required this.controller});
   final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class CustomSearchBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: TextFormField(
-          // controller: controller,
+          controller: controller,
           onChanged: onChanged,
           decoration: InputDecoration(
             suffixIcon: const Icon(Icons.search_outlined, size: 21),

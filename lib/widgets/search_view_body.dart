@@ -46,17 +46,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             },
           ),
           const SizedBox(height: 15),
-          Container(
-            height: MediaQuery.of(context).size.height - 130,
-            child: ListView.builder(
-              itemCount: notes?.length,
-              itemBuilder: (context, index) {
-                if (notes == null || notes!.isEmpty) {
-                  return const Text('There are no notes now.');
-                }
-                return NoteItem(note: notes![index]);
-              },
-            ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height - 250,
+            child: findNotes(_controller.text) == null
+                ? const Text('There are no notes now.')
+                : ListView(
+                    children: findNotes(_controller.text)!,
+                  ),
           )
         ],
       ),
